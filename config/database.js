@@ -6,10 +6,10 @@ module.exports = ({ env }) => ({
       settings: {
         host: env('DATABASE_HOST', 'cluster0.ovcao.mongodb.net'),
         srv: env.bool('DATABASE_SRV', true),
-        port: env.int('DATABASE_PORT', 27017),
-        database: env('DATABASE_NAME', 'tryagain'),
-        username: env('DATABASE_USERNAME', 'ceejayps'),
-        password: env('DATABASE_PASSWORD', '7Ap34lif3'),
+        port: env.int('DATABASE_PORT', env['DATABASE_PORT']),
+        database: env('DATABASE_NAME', env['DATABASE_NAME']),
+        username: env('DATABASE_USERNAME', env['DATABASE_USERNAME']),
+        password: env('DATABASE_PASSWORD', env['DATABASE_PASSWORD']),
       },
       options: {
         authenticationDatabase: env('AUTHENTICATION_DATABASE', null),
